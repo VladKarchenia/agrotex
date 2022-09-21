@@ -1,0 +1,12 @@
+{
+  "about": {
+    "form": {
+      "button": "Save",
+      "title": "Form title"
+    },
+    "title": "About page | me"
+  },
+  "footer": {
+    "copyright": "COPYRIGHT © {{year}}, All Rights Reserved"
+  }
+}

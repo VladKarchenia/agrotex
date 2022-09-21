@@ -1,0 +1,39 @@
+{
+  "name": "next-gql-dogs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run start",
+    "build": "next build",
+    "start": "next dev",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.6.2",
+    "@stitches/react": "^1.2.8",
+    "classnames": "^2.3.1",
+    "date-fns": "^2.29.3",
+    "deepmerge": "^4.2.2",
+    "dotenv": "^16.0.2",
+    "fast-loops": "^1.1.3",
+    "gql": "^1.1.2",
+    "graphql": "^16.3.0",
+    "lazysizes": "^5.3.2",
+    "next": "12.1.5",
+    "next-i18next": "^11.0.0",
+    "polished": "^4.2.2",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-hook-form": "^7.35.0",
+    "ts-node": "^10.9.1",
+    "url-join": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.25",
+    "@types/react": "18.0.6",
+    "@types/react-dom": "18.0.2",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "typescript": "4.6.3"
+  }
+}
