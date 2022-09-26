@@ -1,13 +1,9 @@
-export const getGlobalEventTarget = (): NodeJS.Global | typeof globalThis | Window | null => {
-  if (typeof global !== "undefined" && global.addEventListener) {
-    return global;
-  }
-
-  if (typeof globalThis !== "undefined" && globalThis.addEventListener) {
+export const getGlobalEventTarget = (): typeof globalThis | Window | null => {
+  if (typeof globalThis !== "undefined") {
     return globalThis;
   }
 
-  if (typeof window !== "undefined" && window.addEventListener) {
+  if (typeof window !== "undefined") {
     return window;
   }
 
