@@ -142,16 +142,10 @@ export const Text = styled("p", {
         css: CSS;
       }[]
     >((acc, scale) => {
-      acc.push(
-        {
-          scale: Number(scale) as TypographyScale,
-          css: scaleVariantMap[scale].legacy,
-        },
-        {
-          scale: Number(scale) as TypographyScale,
-          css: scaleVariantMap[scale].modern,
-        }
-      );
+      acc.push({
+        scale: Number(scale) as TypographyScale,
+        css: scaleVariantMap[scale],
+      });
       return acc;
     }, []),
   ],

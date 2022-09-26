@@ -9,7 +9,7 @@ export * from "./animations";
 // export * from "./boxShadows";
 export * from "./classes";
 export * from "./colors";
-// export * from "./easing";
+export * from "./easing";
 
 type CSSSelector =
   | "hover"

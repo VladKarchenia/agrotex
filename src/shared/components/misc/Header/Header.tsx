@@ -15,7 +15,7 @@ interface IHeaderProps {
 
 export const Header: React.FC<IHeaderProps> = ({
   children = null,
-  hasShadow = true,
+  hasShadow = false,
   theme = "default",
 }) => {
   return (
@@ -29,7 +29,7 @@ export const Header: React.FC<IHeaderProps> = ({
       </HeaderNavItem>
       <HeaderNavItem>{children}</HeaderNavItem>
       <HeaderNavItem justify="end">
-        <Box>123</Box>
+        <Box>Поиск</Box>
       </HeaderNavItem>
     </HeaderNavWrapper>
   );

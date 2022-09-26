@@ -7,6 +7,44 @@
     "title": "About page | me"
   },
   "footer": {
-    "copyright": "COPYRIGHT © {{year}}, All Rights Reserved"
+    "copyright": "COPYRIGHT © {{year}}, All Rights Reserved",
+    "links": {
+      "hours": {
+        "title": "Время работы",
+        "text": "Пн – Пт / 8:00 – 17:00"
+      },
+      "contacts": {
+        "title": "Контакты",
+        "tel1": {
+          "text": "8 (044) 790–93–10",
+          "link": "tel:+(375)447909310"
+        },
+        "tel2": {
+          "text": "8 (1562) 6–68–48",
+          "link": "tel:+(375)156266848"
+        },
+        "tel3": {
+          "text": "8 (1562) 6–68–49",
+          "link": "tel:+(375)156266849"
+        },
+        "email": {
+          "text": "slonimagrotex@rambler.ru",
+          "link": "mailto:slonimagrotex@rambler.ru"
+        }
+      },
+      "customers": {
+        "title": "Покупателям",
+        "catalog": "Каталог",
+        "stocks": "Акции",
+        "manufacturers": "Производители",
+        "faq": "Часто задаваемые вопросы"
+      },
+      "company": {
+        "title": "Компания",
+        "about": "О нас",
+        "news": "Новости",
+        "contacts": "Контакты"
+      }
+    }
   }
 }

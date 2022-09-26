@@ -5,3 +5,5 @@ export * from "./Grid";
 export * from "./Flex";
 export * from "./Stack";
 export * from "./Divider";
+export * from "./AspectRatio";
+export * from "./Redacted";
