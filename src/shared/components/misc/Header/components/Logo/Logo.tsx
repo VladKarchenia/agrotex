@@ -1,5 +1,4 @@
 import React from "react";
-import { ComponentProps } from "@/utils";
 import { IllustrationLogo } from "@/shared/illustrations";
 import { Flex, Spacer } from "@/shared/components/layout";
 import { Copy } from "@/shared/components/core";

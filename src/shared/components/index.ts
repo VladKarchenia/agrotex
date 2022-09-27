@@ -3,4 +3,5 @@ export * from "./core";
 export * from "./misc";
 export * from "./forms";
 export * from "./imagery";
+export * from "./content";
 export * from "./hooks";

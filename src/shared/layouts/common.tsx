@@ -3,7 +3,7 @@ import { ApolloProvider } from "@apollo/client";
 import { client } from "../gql/client";
 import { Global } from "../components";
 
-export const CommonLayout: React.FC<React.PropsWithChildren<any>> = ({
+export const CommonLayout: React.FC<React.PropsWithChildren<unknown>> = ({
   children,
 }) => {
   return (

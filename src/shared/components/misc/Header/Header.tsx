@@ -4,16 +4,14 @@ import {
   HeaderNavItem,
   HeaderNavWrapper,
   Logo,
-  Spacer,
 } from "@/shared/components";
 
 interface IHeaderProps {
-  children?: React.ReactNode;
   hasShadow?: boolean;
   theme?: "default" | "cream" | "transparent";
 }
 
-export const Header: React.FC<IHeaderProps> = ({
+export const Header: React.FC<React.PropsWithChildren<IHeaderProps>> = ({
   children = null,
   hasShadow = false,
   theme = "default",

@@ -1,4 +1,4 @@
-import { EmblaCarouselType } from "embla-carousel";
+import { EmblaCarouselType } from "embla-carousel-react";
 
 import { SLIDER_MOVE_EVENT } from "./utils";
 

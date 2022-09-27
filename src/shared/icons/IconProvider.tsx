@@ -11,7 +11,7 @@ export const IconCache = createContext<IconCacheContextValue>(
 
 export const useIconCache = () => useContext(IconCache);
 
-export const IconProvider = ({ children }: React.PropsWithChildren<{}>) => {
+export const IconProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const [cache, setCache] = useState({} as any);
 
   return (

@@ -17,7 +17,6 @@ import {
 import { applyStackStyles, applyStackItemClassName } from "./Stack.styles";
 
 export interface IStackProps {
-  children: React.ReactNode;
   as?: keyof JSX.IntrinsicElements;
   css?: CSS;
 
@@ -36,7 +35,7 @@ export interface IStackProps {
   outerDividers?: boolean | "top" | "bottom";
 }
 
-export const Stack: React.FC<IStackProps> = ({
+export const Stack: React.FC<React.PropsWithChildren<IStackProps>> = ({
   as = "div",
   children,
   css = {},

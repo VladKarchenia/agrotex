@@ -15,7 +15,6 @@ const initialOptions: EmblaOptionsType = {
 };
 
 export interface ISliderProviderProps {
-  children: React.ReactNode;
   idleTimeoutMs?: number;
 
   lazyInit?: boolean;
@@ -29,7 +28,9 @@ export interface ISliderProviderProps {
   };
 }
 
-export const SliderProvider: React.FC<ISliderProviderProps> = ({
+export const SliderProvider: React.FC<
+  React.PropsWithChildren<ISliderProviderProps>
+> = ({
   children,
   idleTimeoutMs,
   lazyInit = false,

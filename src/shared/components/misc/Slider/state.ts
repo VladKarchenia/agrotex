@@ -1,5 +1,5 @@
 import React from "react";
-import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
+import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel-react";
 
 import { ResponsiveProp } from "@/utils";
 

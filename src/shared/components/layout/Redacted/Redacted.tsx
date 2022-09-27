@@ -7,7 +7,6 @@ import { CSS } from "@/config";
 import { SRedacted } from "./Redacted.styles";
 
 export interface IRedactedProps extends ComponentProps<typeof SRedacted> {
-  children: React.ReactNode;
   height?: CSS["height"];
   width?: CSS["width"];
 
@@ -17,7 +16,7 @@ export interface IRedactedProps extends ComponentProps<typeof SRedacted> {
   text?: boolean;
 }
 
-export const Redacted: React.FC<IRedactedProps> = ({
+export const Redacted: React.FC<React.PropsWithChildren<IRedactedProps>> = ({
   children,
   height = "$16",
   width = "100%",

@@ -11,19 +11,14 @@ import {
 import { SAspectRatio } from "./AspectRatio.styles";
 
 export interface IAspectRatioProps {
-  children: React.ReactNode;
   className?: string;
   ratio?: string | ResponsiveProp<string>;
   css?: CSS;
 }
 
-export const AspectRatio: React.FC<IAspectRatioProps> = ({
-  children,
-  className,
-  ratio = "1:1",
-  css = {},
-  ...props
-}) => {
+export const AspectRatio: React.FC<
+  React.PropsWithChildren<IAspectRatioProps>
+> = ({ children, className, ratio = "1:1", css = {}, ...props }) => {
   return (
     <SAspectRatio
       data-plum-ui="aspect-ratio"

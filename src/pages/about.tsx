@@ -20,6 +20,8 @@ import {
   GridItem,
   Header,
   Hidden,
+  ListingCard,
+  ProductRail,
   Spacer,
   Stack,
 } from "@/shared/components";
@@ -27,6 +29,8 @@ import { IMeta, Meta } from "@/shared/layouts/components";
 import { styled } from "@/config";
 import { IllustrationLock } from "@/shared/illustrations";
 import { useCallback } from "react";
+
+import popularItems from "@/shared/components/content/ProductRail/ProductRail.stories.json";
 
 export const DashboardBox = styled("div", {
   background: "$system-white",
@@ -196,6 +200,9 @@ const About = () => {
                 </GridItem>
               </Grid>
             </DashboardBox>
+
+            <Spacer size={64} />
+
             <Box>
               Фуллскрин баннер-автослайдер с картинками на которых разделы из
               каталога
@@ -211,7 +218,33 @@ const About = () => {
           </Box>
         </GridContainer>
 
-        <Spacer size={{ "@initial": 0, "@md": 32 }} />
+        <Box css={{ backgroundColor: "$neutrals-0" }}>
+          <Spacer size={64} />
+
+          <ProductRail
+            data={{
+              preTitle: t("app:popular.preTitle"),
+              title: t("app:popular.title"),
+            }}
+            // isLoading={state.loading}
+          >
+            {popularItems.map((listing) => (
+              <ListingCard
+                key={listing.id}
+                name={listing.name}
+                cityName={listing.cityName}
+                image={listing.image}
+                // url={listing.url}
+                // openInSameTab={false}
+                // onClick={() => {
+                //   listingCardOnClick(listing.Id);
+                // }}
+              />
+            ))}
+          </ProductRail>
+
+          <Spacer size={32} />
+        </Box>
 
         <Box css={{ marginTop: "auto" }}>
           <FooterContainer />
