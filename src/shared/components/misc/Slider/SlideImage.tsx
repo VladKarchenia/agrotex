@@ -4,8 +4,8 @@ import {
   Redacted,
   Picture,
   IPictureDimensions,
-  useImageLoad,
 } from "@/shared/components";
+import { useImageLoad } from "@/shared/hooks";
 import { ResponsiveProp } from "@/utils";
 import { mediaQueries } from "@/config";
 

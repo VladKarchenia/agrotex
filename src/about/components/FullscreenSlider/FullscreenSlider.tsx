@@ -7,8 +7,8 @@ import {
   SliderNavigation,
   SliderPagination,
   SliderProvider,
-  useWindowDimensions,
 } from "@/shared/components";
+import { useWindowDimensions } from "@/shared/hooks";
 import {
   SPlaceholderContainer,
   SSliderContainer,

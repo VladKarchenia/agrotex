@@ -7,3 +7,4 @@ export * from "./Stack";
 export * from "./Divider";
 export * from "./AspectRatio";
 export * from "./Redacted";
+export * from "./Tabs";

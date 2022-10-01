@@ -6,13 +6,10 @@ import {
   Copy,
   GridContainer,
   Hidden,
-  IButtonProps,
   Slide,
   Slider,
   SliderNavigationArrow,
   SliderProvider,
-  Stack,
-  Title,
   ListingCardPlaceholder,
   Grid,
   GridItem,
@@ -24,43 +21,13 @@ import {
   SProductRailSlide,
 } from "./ProductRail.styles";
 
-export type ProductRailData = {
-  title?: string;
-  preTitle?: string;
-  copy?: string;
-  image?: React.ReactNode;
-  buttonProps?: IButtonProps;
-};
-
 export interface IProductRailProps extends ComponentProps<typeof SProductRail> {
-  data: ProductRailData;
-
   isLoading?: boolean;
   loadingComponent?: React.ReactNode;
 }
 
-interface IProductRailContentProps {
-  data: ProductRailData;
-}
-
-export const ProductRailContent: React.FC<IProductRailContentProps> = ({
-  data,
-}) => {
-  const { preTitle } = data;
-
-  return (
-    <Stack space={8}>
-      {preTitle && <Copy intent="detail">{preTitle}</Copy>}
-      <Title as="h2" scale={preTitle ? 5 : 4} editorial>
-        {data.title}
-      </Title>
-    </Stack>
-  );
-};
-
 export const ProductRail = ({
   children,
-  data,
   isLoading,
   loadingComponent = <ListingCardPlaceholder />,
 }: IProductRailProps) => {
@@ -99,35 +66,28 @@ export const ProductRail = ({
               </SProductRailArrow>
             </Hidden>
             <GridItem column={{ "@initial": "1 / -1", "@sm": "2 / -2" }}>
-              <Stack space={24}>
-                <ProductRailContent data={data} />
-
-                <Slider noOverflow={{ "@initial": true, "@sm": false }}>
-                  {isLoading
-                    ? Array.from({ length: 6 }, (_, i) => i).map((index) => (
-                        <Slide
-                          key={index}
-                          size={{ "@initial": 256, "@lg": 280 }}
-                        >
-                          <SProductRailSlide>
-                            {loadingComponent}
-                          </SProductRailSlide>
-                        </Slide>
-                      ))
-                    : React.Children.map(
-                        children,
-                        (child, index) =>
-                          React.isValidElement(child) && (
-                            <Slide
-                              key={index}
-                              size={{ "@initial": 256, "@lg": 280 }}
-                            >
-                              <SProductRailSlide>{child}</SProductRailSlide>
-                            </Slide>
-                          )
-                      )}
-                </Slider>
-              </Stack>
+              <Slider noOverflow={{ "@initial": true, "@sm": false }}>
+                {isLoading
+                  ? Array.from({ length: 6 }, (_, i) => i).map((index) => (
+                      <Slide key={index} size={{ "@initial": 256, "@lg": 280 }}>
+                        <SProductRailSlide>
+                          {loadingComponent}
+                        </SProductRailSlide>
+                      </Slide>
+                    ))
+                  : React.Children.map(
+                      children,
+                      (child, index) =>
+                        React.isValidElement(child) && (
+                          <Slide
+                            key={index}
+                            size={{ "@initial": 256, "@lg": 280 }}
+                          >
+                            <SProductRailSlide>{child}</SProductRailSlide>
+                          </Slide>
+                        )
+                    )}
+              </Slider>
             </GridItem>
             <Hidden below="sm">
               <SProductRailArrow direction="next">

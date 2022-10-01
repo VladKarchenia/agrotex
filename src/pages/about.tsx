@@ -6,7 +6,11 @@ import { requiredNamespaces } from "@/config/i18n";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 // import { GetServerSideProps } from "next";
-import { FullscreenSlider, SaleSlider } from "@/about/components";
+import {
+  FullscreenSlider,
+  PopularSlider,
+  SaleSlider,
+} from "@/about/components";
 import Head from "next/head";
 import { atomicClassNames } from "@/utils";
 import {
@@ -19,9 +23,6 @@ import {
   GridContainer,
   GridItem,
   Header,
-  Hidden,
-  ListingCard,
-  ProductRail,
   Spacer,
   Stack,
   StockMultiCard,
@@ -31,7 +32,8 @@ import { styled } from "@/config";
 import { IllustrationLock } from "@/shared/illustrations";
 import { useCallback } from "react";
 
-import popularItems from "@/shared/components/content/ProductRail/popularItems.json";
+// we need to format this data based on the screen width (how many items to show per slide)
+// format from 1 array -> many arrays
 import saleItems from "@/about/components/SaleSlider/saleItems.json";
 
 export const DashboardBox = styled("div", {
@@ -70,8 +72,6 @@ export type AmenityFormState = {
 
 const About = () => {
   const { t } = useTranslation();
-  // console.log(saleItems);
-  // saleItems.map((items, index) => console.log(items));
 
   const metaData: IMeta = {
     title: t("app:about:title"),
@@ -240,36 +240,7 @@ const About = () => {
           <Spacer size={32} />
         </Box>
 
-        <Box css={{ backgroundColor: "$neutrals-0" }}>
-          <Spacer size={64} />
-          <Box css={{ padding: "$24", backgroundColor: "$brand-blue-light" }}>
-            Здесь надо ещё добавить табы с переключением на разные категории!
-            Т.е будут подставляться разные данные в слайдер
-          </Box>
-          <ProductRail
-            data={{
-              preTitle: t("app:popular.preTitle"),
-              title: t("app:popular.title"),
-            }}
-            // isLoading={state.loading}
-          >
-            {popularItems.map((listing) => (
-              <ListingCard
-                key={listing.id}
-                name={listing.name}
-                cityName={listing.cityName}
-                image={listing.image}
-                // url={listing.url}
-                // openInSameTab={false}
-                // onClick={() => {
-                //   listingCardOnClick(listing.Id);
-                // }}
-              />
-            ))}
-          </ProductRail>
-
-          <Spacer size={32} />
-        </Box>
+        <PopularSlider />
 
         <Box css={{ marginTop: "auto" }}>
           <FooterContainer />

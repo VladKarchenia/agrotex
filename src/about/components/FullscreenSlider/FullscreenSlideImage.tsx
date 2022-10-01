@@ -7,8 +7,8 @@ import {
   Picture,
   Redacted,
   Slide,
-  useImageLoad,
 } from "@/shared/components";
+import { useImageLoad } from "@/shared/hooks";
 
 export interface IGalleryImage {
   src: string;
