@@ -59,31 +59,31 @@ const imageDimensions: IPictureDimensions[] = [
   },
 ];
 
+const images = [
+  {
+    src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/cceb597f-fc13-47ad-82be-81775f64b495.jpg",
+    alt: "Ikebana - 1",
+  },
+  {
+    src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/39c5be15-2298-49e9-88d9-a17ab5465fe2.jpg",
+    alt: "Ikebana - 2",
+  },
+  {
+    src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/28df86c3-fbc2-4c8a-9536-26f9fc9e9445.jpg",
+    alt: "Ikebana - 3",
+  },
+  {
+    src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/3ab1e698-1ad9-4c1b-a69c-f29d8b372782.jpg",
+    alt: "Ikebana - 4",
+  },
+  {
+    src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/1484cd75-2a69-4339-bc63-ffb4995edfe6.jpg",
+    alt: "Ikebana - 5",
+  },
+];
+
 export const FullscreenSlider = () => {
   const dimensions = useWindowDimensions();
-
-  const images = [
-    {
-      src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/cceb597f-fc13-47ad-82be-81775f64b495.jpg",
-      alt: "Ikebana - 1",
-    },
-    {
-      src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/39c5be15-2298-49e9-88d9-a17ab5465fe2.jpg",
-      alt: "Ikebana - 2",
-    },
-    {
-      src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/28df86c3-fbc2-4c8a-9536-26f9fc9e9445.jpg",
-      alt: "Ikebana - 3",
-    },
-    {
-      src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/3ab1e698-1ad9-4c1b-a69c-f29d8b372782.jpg",
-      alt: "Ikebana - 4",
-    },
-    {
-      src: "https://plumguide-staging.freetls.fastly.net/listings/9853/hero/1484cd75-2a69-4339-bc63-ffb4995edfe6.jpg",
-      alt: "Ikebana - 5",
-    },
-  ];
 
   return (
     <Box css={{ width: "100%", height: "100%", position: "relative" }}>

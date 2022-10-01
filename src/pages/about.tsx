@@ -6,7 +6,7 @@ import { requiredNamespaces } from "@/config/i18n";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 // import { GetServerSideProps } from "next";
-import { FullscreenSlider } from "@/about/components";
+import { FullscreenSlider, SaleSlider } from "@/about/components";
 import Head from "next/head";
 import { atomicClassNames } from "@/utils";
 import {
@@ -24,13 +24,15 @@ import {
   ProductRail,
   Spacer,
   Stack,
+  StockMultiCard,
 } from "@/shared/components";
 import { IMeta, Meta } from "@/shared/layouts/components";
 import { styled } from "@/config";
 import { IllustrationLock } from "@/shared/illustrations";
 import { useCallback } from "react";
 
-import popularItems from "@/shared/components/content/ProductRail/ProductRail.stories.json";
+import popularItems from "@/shared/components/content/ProductRail/popularItems.json";
+import saleItems from "@/about/components/SaleSlider/saleItems.json";
 
 export const DashboardBox = styled("div", {
   background: "$system-white",
@@ -68,6 +70,8 @@ export type AmenityFormState = {
 
 const About = () => {
   const { t } = useTranslation();
+  // console.log(saleItems);
+  // saleItems.map((items, index) => console.log(items));
 
   const metaData: IMeta = {
     title: t("app:about:title"),
@@ -221,6 +225,27 @@ const About = () => {
         <Box css={{ backgroundColor: "$neutrals-0" }}>
           <Spacer size={64} />
 
+          <SaleSlider
+            data={{
+              preTitle: t("app:stock.preTitle"),
+              title: t("app:stock.title"),
+            }}
+            // isLoading={state.loading}
+          >
+            {saleItems.map((items, index) => (
+              <StockMultiCard key={index} items={items} />
+            ))}
+          </SaleSlider>
+
+          <Spacer size={32} />
+        </Box>
+
+        <Box css={{ backgroundColor: "$neutrals-0" }}>
+          <Spacer size={64} />
+          <Box css={{ padding: "$24", backgroundColor: "$brand-blue-light" }}>
+            Здесь надо ещё добавить табы с переключением на разные категории!
+            Т.е будут подставляться разные данные в слайдер
+          </Box>
           <ProductRail
             data={{
               preTitle: t("app:popular.preTitle"),
