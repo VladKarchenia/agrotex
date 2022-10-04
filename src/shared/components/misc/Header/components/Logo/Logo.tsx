@@ -1,7 +1,7 @@
 import React from "react";
 import { IllustrationLogo } from "@/shared/illustrations";
 import { Flex, Spacer } from "@/shared/components/layout";
-import { Copy } from "@/shared/components/core";
+import { Box, Copy } from "@/shared/components/core";
 
 interface ILogo {
   href?: string;
@@ -18,7 +18,9 @@ export const Logo: React.FC<ILogo> = ({ href = "/" }) => {
       style={{ textDecoration: "none" }}
     >
       <Flex align={"center"}>
-        <IllustrationLogo />
+        <Box css={{ width: 30, "@sm": { width: 40 } }}>
+          <IllustrationLogo />
+        </Box>
         <Spacer size={4} horizontal />
         <Copy scale={3} color={"brand-green-darkest"} bold>
           АГРОТЕХ

@@ -1,4 +1,5 @@
 import { styled } from "@/config";
+import { rgba } from "@/utils";
 
 export const SHeaderNav = styled("header", {
   $$headerBackground: "$colors$system-white",
@@ -26,7 +27,7 @@ export const SHeaderNav = styled("header", {
         boxShadow: "none",
       },
       true: {
-        boxShadow: "0 2px 10px 0 rgba(0, 0, 0, 0.1)",
+        boxShadow: `0 2px 10px 0 ${rgba("neutrals-0", 0.1)}`,
       },
     },
 

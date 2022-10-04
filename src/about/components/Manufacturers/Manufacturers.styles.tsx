@@ -1,10 +1,10 @@
 import { styled } from "@/config";
 
-export const SSaleSlider = styled("div", {
+export const SManufacturers = styled("div", {
   overflow: "hidden",
 });
 
-export const SSaleSliderArrow = styled("div", {
+export const SManufacturersArrow = styled("div", {
   position: "absolute",
   top: 0,
   bottom: 0,
@@ -26,7 +26,7 @@ export const SSaleSliderArrow = styled("div", {
   },
 });
 
-export const SSaleSliderImageContainer = styled("div", {
+export const SManufacturersImageContainer = styled("div", {
   width: "$80",
 
   "img, svg": {
@@ -36,7 +36,7 @@ export const SSaleSliderImageContainer = styled("div", {
   },
 });
 
-export const SSaleSliderSlide = styled("div", {
+export const SManufacturersSlide = styled("div", {
   height: "100%",
   paddingRight: "$16",
   paddingBottom: "$24",

@@ -65,11 +65,6 @@ export const PopularSlider = () => {
   return (
     <Box css={{ backgroundColor: "$neutrals-0" }}>
       <Spacer size={64} />
-      <Box css={{ padding: "$24", backgroundColor: "$brand-blue-light" }}>
-        Здесь надо ещё добавить табы с переключением на разные категории! Т.е
-        будут подставляться разные данные в слайдер
-      </Box>
-      <Spacer size={24} />
       <GridContainer>
         <Grid
           columns={{ "@initial": 6, "@sm": 24 }}

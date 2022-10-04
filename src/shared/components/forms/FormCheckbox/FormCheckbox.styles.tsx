@@ -43,14 +43,14 @@ export const SFormCheckboxInput = styled("input", {
 
   hover: {
     [`+ ${SFormCheckboxBox}`]: {
-      boxShadow: `0px 2px 4px 0px ${rgba("neutrals-9", 0.2)}`,
+      boxShadow: `0 2px 4px 0 ${rgba("neutrals-9", 0.2)}`,
     },
   },
 
   keyboardFocus: {
     [`+ ${SFormCheckboxBox}`]: {
       borderColor: "$brand-yellow-dark",
-      boxShadow: `0px 2px 4px 0px ${rgba("neutrals-9", 0.15)}`,
+      boxShadow: `0 2px 4px 0 ${rgba("neutrals-9", 0.15)}`,
     },
   },
 

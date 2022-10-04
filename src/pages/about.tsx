@@ -8,6 +8,8 @@ import { GetStaticProps } from "next";
 // import { GetServerSideProps } from "next";
 import {
   FullscreenSlider,
+  MainCategories,
+  Manufacturers,
   PopularSlider,
   SaleSlider,
 } from "@/about/components";
@@ -23,18 +25,28 @@ import {
   GridContainer,
   GridItem,
   Header,
+  Hidden,
   Spacer,
   Stack,
+  StockCard,
   StockMultiCard,
 } from "@/shared/components";
 import { IMeta, Meta } from "@/shared/layouts/components";
-import { styled } from "@/config";
+import { mediaQueries, styled } from "@/config";
 import { IllustrationLock } from "@/shared/illustrations";
 import { useCallback } from "react";
 
 // we need to format this data based on the screen width (how many items to show per slide)
 // format from 1 array -> many arrays
 import saleItems from "@/about/components/SaleSlider/saleItems.json";
+import { useMedia } from "@/shared/hooks";
+
+export function chunk<T>(array: T[], chunkSize: number): T[][] {
+  const R = [];
+  for (let i = 0, len = array.length; i < len; i += chunkSize)
+    R.push(array.slice(i, i + chunkSize));
+  return R;
+}
 
 export const DashboardBox = styled("div", {
   background: "$system-white",
@@ -72,6 +84,9 @@ export type AmenityFormState = {
 
 const About = () => {
   const { t } = useTranslation();
+  // console.log(saleItems);
+  // console.log(saleItems.flat());
+  // const isTabletAndAbove = useMedia([mediaQueries.sm], [true], false);
 
   const metaData: IMeta = {
     title: t("app:about:title"),
@@ -111,15 +126,15 @@ const About = () => {
         css={{ flexDirection: "column", minHeight: "100vh" }}
       >
         <Header>
-          {/* TODO: need burger menu? */}
-          <Link href={"/"} passHref>
-            Главная
-          </Link>
-          <Spacer size={24} horizontal />
-          <Link href={"/catalog"} passHref>
-            Каталог
-          </Link>
-          {/* <Spacer size={24} horizontal />
+          <Hidden below="sm">
+            <Link href={"/"} passHref>
+              Главная
+            </Link>
+            <Spacer size={24} horizontal />
+            <Link href={"/catalog"} passHref>
+              Каталог
+            </Link>
+            {/* <Spacer size={24} horizontal />
           <Link href={"/stocks"} passHref>
             Акции
           </Link>
@@ -127,6 +142,8 @@ const About = () => {
           <Link href={"/contacts"} passHref>
             Контакты
           </Link> */}
+          </Hidden>
+          <Hidden above="sm">123</Hidden>
         </Header>
 
         <FullscreenSlider />
@@ -207,6 +224,14 @@ const About = () => {
 
             <Spacer size={64} />
 
+            <Box>Бургер меню и меню в целом</Box>
+            <Spacer size={48} />
+            <Box>Каталог</Box>
+            <Spacer size={48} />
+            <Box>Возможность поиска</Box>
+            <Spacer size={48} />
+            <Box>Фикс лого мобилка</Box>
+            <Spacer size={48} />
             <Box>
               Фуллскрин баннер-автослайдер с картинками на которых разделы из
               каталога
@@ -225,22 +250,59 @@ const About = () => {
         <Box css={{ backgroundColor: "$neutrals-0" }}>
           <Spacer size={64} />
 
-          <SaleSlider
-            data={{
-              preTitle: t("app:stock.preTitle"),
-              title: t("app:stock.title"),
-            }}
-            // isLoading={state.loading}
-          >
-            {saleItems.map((items, index) => (
-              <StockMultiCard key={index} items={items} />
-            ))}
-          </SaleSlider>
+          <Hidden below="sm">
+            <SaleSlider
+              data={{
+                preTitle: t("app:stock.preTitle"),
+                title: t("app:stock.title"),
+              }}
+              // isLoading={state.loading}
+            >
+              {[...chunk(saleItems, 8)].map((items, index) => (
+                <StockMultiCard key={index} items={items} />
+              ))}
+            </SaleSlider>
+          </Hidden>
+          <Hidden above="sm">
+            <SaleSlider
+              data={{
+                preTitle: t("app:stock.preTitle"),
+                title: t("app:stock.title"),
+              }}
+              // isLoading={state.loading}
+            >
+              {saleItems.map((item) => (
+                <StockCard
+                  key={item.id}
+                  name={item.name}
+                  cityName={item.cityName}
+                  image={item.image}
+                  // url={item.url}
+                  // openInSameTab={false}
+                  // onClick={() => {
+                  //   itemCardOnClick(item.Id);
+                  // }}
+                />
+              ))}
+            </SaleSlider>
+          </Hidden>
 
           <Spacer size={32} />
         </Box>
 
         <PopularSlider />
+
+        <Box css={{ backgroundColor: "$neutrals-0" }}>
+          <Spacer size={64} />
+          <MainCategories />
+          <Spacer size={32} />
+        </Box>
+
+        <Box css={{ backgroundColor: "$neutrals-0" }}>
+          <Spacer size={64} />
+          {/* <Manufacturers /> */}
+          <Spacer size={32} />
+        </Box>
 
         <Box css={{ marginTop: "auto" }}>
           <FooterContainer />

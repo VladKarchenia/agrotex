@@ -20,9 +20,9 @@ export const StockMultiCard: React.FC<IStockMultiCardProps> = ({ items }) => {
   return (
     <Grid
       columns={{ "@initial": 1, "@sm": 4 }}
-      columnGap={8}
+      columnGap={{ "@initial": 0, "@sm": 8 }}
       rows={{ "@initial": 1, "@sm": 2 }}
-      rowGap={8}
+      rowGap={{ "@initial": 0, "@sm": 8 }}
     >
       {items.map((item) => (
         <GridItem

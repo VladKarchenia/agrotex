@@ -120,7 +120,7 @@ export const SaleSlider = ({
                           React.isValidElement(child) && (
                             <Slide
                               key={index}
-                              size={{ "@initial": "100%" }}
+                              size={{ "@initial": 256, "@sm": "100%" }}
                             >
                               <SSaleSliderSlide>{child}</SSaleSliderSlide>
                             </Slide>
