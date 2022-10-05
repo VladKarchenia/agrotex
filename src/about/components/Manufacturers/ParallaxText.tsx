@@ -15,7 +15,7 @@ interface ParallaxProps {
   children: any;
   baseVelocity: number;
 }
-
+// TODO: Move it to motion folder
 export const ParallaxText = ({
   children,
   baseVelocity = 100,

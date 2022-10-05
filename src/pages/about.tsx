@@ -17,6 +17,7 @@ import Head from "next/head";
 import { atomicClassNames } from "@/utils";
 import {
   Box,
+  BurgerMenu,
   Button,
   Flex,
   FooterContainer,
@@ -40,6 +41,7 @@ import { useCallback } from "react";
 // format from 1 array -> many arrays
 import saleItems from "@/about/components/SaleSlider/saleItems.json";
 import { useMedia } from "@/shared/hooks";
+import { useRouter } from "next/router";
 
 export function chunk<T>(array: T[], chunkSize: number): T[][] {
   const R = [];
@@ -84,6 +86,7 @@ export type AmenityFormState = {
 
 const About = () => {
   const { t } = useTranslation();
+  const router = useRouter();
   // console.log(saleItems);
   // console.log(saleItems.flat());
   // const isTabletAndAbove = useMedia([mediaQueries.sm], [true], false);
@@ -143,7 +146,17 @@ const About = () => {
             Контакты
           </Link> */}
           </Hidden>
-          <Hidden above="sm">123</Hidden>
+          <Hidden above="sm">
+            <BurgerMenu
+              currentPathname={router.pathname}
+              // config={config}
+              // onLogin={onLogin}
+              // onLogout={onLogout}
+              // registerCountries={registerCountries}
+              // isTransparent={theme === "transparent"}
+              // theme={theme}
+            />
+          </Hidden>
         </Header>
 
         <FullscreenSlider />
@@ -224,6 +237,8 @@ const About = () => {
 
             <Spacer size={64} />
 
+            <Box>Хлебные крошки</Box>
+            <Spacer size={48} />
             <Box>Бургер меню и меню в целом</Box>
             <Spacer size={48} />
             <Box>Каталог</Box>

@@ -4,7 +4,7 @@ export * from "./globalEventTarget";
 export * from "./styles";
 export * from "./types";
 
-// export * from "./createContext";
+export * from "./createContext";
 export * from "./generateHash";
 export * from "./mergeRefs";
 // export * from "./scrollBy";

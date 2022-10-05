@@ -7,3 +7,5 @@ export * from "./IconTick";
 export * from "./IconChevron";
 export * from "./IconArrow";
 export * from "./IconLongArrow";
+export * from "./IconBurgerMenu";
+export * from "./IconCross";

@@ -8,3 +8,4 @@ export * from "./Divider";
 export * from "./AspectRatio";
 export * from "./Redacted";
 export * from "./Tabs";
+export * from "./Accordion";
