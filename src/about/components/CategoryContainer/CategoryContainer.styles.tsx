@@ -3,6 +3,7 @@ import { Box, Copy } from "@/shared/components";
 import { rgba } from "@/utils";
 
 export const SCategoryContainer = styled(Box, {
+  width: "100%",
   height: "$192",
   padding: "$24",
   backgroundColor: "$brand-blue-darkest",
@@ -10,6 +11,10 @@ export const SCategoryContainer = styled(Box, {
   position: "relative",
   overflow: "hidden",
   cursor: "pointer",
+
+  "@md": {
+    width: "auto",
+  },
 
   before: {
     content: "",
@@ -27,6 +32,20 @@ export const SCategoryContainer = styled(Box, {
     before: {
       boxShadow: `0 0 0 15px ${rgba("neutrals-0", 0.2)} inset`,
     },
+  },
+
+  variants: {
+    grow: {
+      true: {
+        "@md": {
+          flexGrow: 2,
+        },
+      },
+    },
+  },
+
+  defaultVariants: {
+    grow: false,
   },
 });
 

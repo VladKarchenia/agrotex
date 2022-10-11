@@ -1,10 +1,10 @@
 import { styled } from "@/config";
 
-export const SManufacturers = styled("div", {
+export const SBrands = styled("div", {
   overflow: "hidden",
 });
 
-export const SManufacturersArrow = styled("div", {
+export const SBrandsArrow = styled("div", {
   position: "absolute",
   top: 0,
   bottom: 0,
@@ -26,7 +26,7 @@ export const SManufacturersArrow = styled("div", {
   },
 });
 
-export const SManufacturersImageContainer = styled("div", {
+export const SBrandsImageContainer = styled("div", {
   width: "$80",
 
   "img, svg": {
@@ -36,7 +36,7 @@ export const SManufacturersImageContainer = styled("div", {
   },
 });
 
-export const SManufacturersSlide = styled("div", {
+export const SBrandsSlide = styled("div", {
   height: "100%",
   paddingRight: "$16",
   paddingBottom: "$24",

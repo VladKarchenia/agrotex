@@ -22,10 +22,10 @@ export const Header: React.FC<React.PropsWithChildren<IHeaderProps>> = ({
       hasShadow={{ "@initial": false, "@md": hasShadow }}
       css={{ paddingX: "$16" }}
     >
-      <HeaderNavItem justify="start">
+      <HeaderNavItem justify="start">{children}</HeaderNavItem>
+      <HeaderNavItem>
         <Logo />
       </HeaderNavItem>
-      <HeaderNavItem>{children}</HeaderNavItem>
       <HeaderNavItem justify="end">
         <Box>Поиск</Box>
       </HeaderNavItem>

@@ -57,7 +57,7 @@ const maufacturers = [
   ],
 ];
 
-export const Manufacturers = () => {
+export const Brands = () => {
   return (
     <GridContainer css={{ overflow: "hidden" }}>
       <Grid

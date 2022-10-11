@@ -30,8 +30,16 @@ export const MainCategories = () => {
             css={{ gap: "$16" }}
             direction={{ "@initial": "column", "@sm": "row" }}
           >
-            <CategoryContainer title={"Животноводство"} />
+            <CategoryContainer title={"Животноводство"} grow={true} />
             <CategoryContainer title={"Электроинструмент"} />
+          </Flex>
+          <Spacer size={16} />
+          <Flex
+            css={{ gap: "$16" }}
+            direction={{ "@initial": "column", "@sm": "row" }}
+          >
+            <CategoryContainer title={"Сварка / Пайка"} />
+            <CategoryContainer title={"Водоснабжение"} grow={true} />
           </Flex>
         </GridItem>
       </Grid>

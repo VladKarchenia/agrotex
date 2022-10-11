@@ -72,9 +72,9 @@ const sections: IFooterNavSections = {
           href: "/stocks",
         },
         {
-          id: "manufacturers",
-          name: "app:footer.links.customers.manufacturers",
-          href: "/manufacturers",
+          id: "brands",
+          name: "app:footer.links.customers.brands",
+          href: "/brands",
         },
         {
           id: "faq",

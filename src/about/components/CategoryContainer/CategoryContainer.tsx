@@ -1,8 +1,14 @@
 import { SCategoryContainer, SCategoryTitle } from "./CategoryContainer.styles";
 
-export const CategoryContainer = ({ title }: { title: string }) => {
+export const CategoryContainer = ({
+  title,
+  grow,
+}: {
+  title: string;
+  grow?: boolean;
+}) => {
   return (
-    <SCategoryContainer>
+    <SCategoryContainer grow={grow}>
       <SCategoryTitle color={"neutrals-0"} scale={4} bold>
         {title}
       </SCategoryTitle>

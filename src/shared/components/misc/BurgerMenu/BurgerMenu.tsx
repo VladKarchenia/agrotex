@@ -242,7 +242,7 @@ export const BurgerMenu: React.FC<IBurgerMenuProps> = ({
         {/* <Stack space={16}>
             <Link href="/catalog">Каталог</Link>
             <Link href="/stocks">Акции</Link>
-            <Link href="/manufacturers">Производители</Link>
+            <Link href="/brands">Производители</Link>
             <Link href="/faq">Часто задаваемые вопросы</Link>
           </Stack> */}
       </Drawer>

@@ -9,7 +9,7 @@ import { GetStaticProps } from "next";
 import {
   FullscreenSlider,
   MainCategories,
-  Manufacturers,
+  Brands,
   PopularSlider,
   SaleSlider,
 } from "@/about/components";
@@ -27,6 +27,7 @@ import {
   GridItem,
   Header,
   Hidden,
+  NavMenu,
   Spacer,
   Stack,
   StockCard,
@@ -34,13 +35,13 @@ import {
 } from "@/shared/components";
 import { IMeta, Meta } from "@/shared/layouts/components";
 import { mediaQueries, styled } from "@/config";
-import { IllustrationLock } from "@/shared/illustrations";
-import { useCallback } from "react";
+// import { IllustrationLock } from "@/shared/illustrations";
+// import { useCallback } from "react";
 
 // we need to format this data based on the screen width (how many items to show per slide)
 // format from 1 array -> many arrays
 import saleItems from "@/about/components/SaleSlider/saleItems.json";
-import { useMedia } from "@/shared/hooks";
+// import { useMedia } from "@/shared/hooks";
 import { useRouter } from "next/router";
 
 export function chunk<T>(array: T[], chunkSize: number): T[][] {
@@ -103,17 +104,17 @@ const About = () => {
   //     [`amenity-${cur.id}`]: true,
   //   };
   // }, {});
-  const defaultValues = {
-    apple: false,
-    orange: false,
-    lemon: false,
-  };
+//   const defaultValues = {
+//     apple: false,
+//     orange: false,
+//     lemon: false,
+//   };
 
-  const methods = useForm<AmenityFormState>({ defaultValues });
+//   const methods = useForm<AmenityFormState>({ defaultValues });
 
-  const onSubmit = useCallback((data: any) => {
-    console.log(data);
-  }, []);
+//   const onSubmit = useCallback((data: any) => {
+//     console.log(data);
+//   }, []);
 
   return (
     <>
@@ -159,6 +160,8 @@ const About = () => {
           </Hidden>
         </Header>
 
+        <NavMenu />
+
         <FullscreenSlider />
 
         <Spacer size={{ "@initial": 0, "@md": 48 }} />
@@ -174,7 +177,7 @@ const About = () => {
               },
             }}
           >
-            <DashboardBox fullHeight>
+            {/* <DashboardBox fullHeight>
               <Grid
                 columns={{ "@md": "320px 1fr" }}
                 gap={{ "@initial": 8, "@md": 16 }}
@@ -233,9 +236,7 @@ const About = () => {
                   </FormProvider>
                 </GridItem>
               </Grid>
-            </DashboardBox>
-
-            <Spacer size={64} />
+            </DashboardBox> */}
 
             <Box>Хлебные крошки</Box>
             <Spacer size={48} />
@@ -244,21 +245,6 @@ const About = () => {
             <Box>Каталог</Box>
             <Spacer size={48} />
             <Box>Возможность поиска</Box>
-            <Spacer size={48} />
-            <Box>Фикс лого мобилка</Box>
-            <Spacer size={48} />
-            <Box>
-              Фуллскрин баннер-автослайдер с картинками на которых разделы из
-              каталога
-            </Box>
-            <Spacer size={48} />
-            <Box>Акции</Box>
-            <Spacer size={48} />
-            <Box>Слайдер с популярными товарами</Box>
-            <Spacer size={48} />
-            <Box>2 картинки ссылки на какие-то категории</Box>
-            <Spacer size={48} />
-            <Box>Производители</Box>
           </Box>
         </GridContainer>
 
@@ -315,7 +301,7 @@ const About = () => {
 
         <Box css={{ backgroundColor: "$neutrals-0" }}>
           <Spacer size={64} />
-          {/* <Manufacturers /> */}
+          {/* <Brands /> */}
           <Spacer size={32} />
         </Box>
 
